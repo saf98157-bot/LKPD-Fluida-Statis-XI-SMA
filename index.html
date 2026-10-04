@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKPD Fluida Statis - Tekanan Hidrostatis</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HALAMAN SAMPUL -->
+    <div class="page cover-page">
+        <div class="cover-header">
+            <div class="unimed-logo">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='95' fill='none' stroke='%23003d82' stroke-width='3'/%3E%3Ctext x='50%25' y='45%25' font-size='16' font-weight='bold' text-anchor='middle' fill='%23003d82'%3EUNIMED%3C/text%3E%3C/svg%3E" alt="UNIMED">
+            </div>
+            <h1>UNIVERSITAS NEGERI MEDAN</h1>
+            <h2>FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM</h2>
+        </div>
+
+        <div class="cover-content">
+            <div class="lkpd-title">
+                <h1>LKPD</h1>
+                <h2>FLUIDA STATIS</h2>
+                <h3>Tekanan Hidrostatis</h3>
+            </div>
+
+            <div class="bottle-illustration">
+                <svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Botol -->
+                    <path d="M 60 40 L 60 20 Q 60 10 70 10 L 130 10 Q 140 10 140 20 L 140 40 L 135 50 L 135 220 Q 135 240 120 250 L 80 250 Q 65 240 65 220 L 65 50 Z" fill="none" stroke="#4a90e2" stroke-width="2"/>
+                    <rect x="65" y="80" width="70" height="120" fill="#a8d8f0" opacity="0.6"/>
+                    
+                    <!-- Lubang air -->
+                    <circle cx="140" cy="100" r="4" fill="#4a90e2"/>
+                    <circle cx="140" cy="140" r="4" fill="#4a90e2"/>
+                    <circle cx="140" cy="180" r="4" fill="#4a90e2"/>
+                    
+                    <!-- Pancaran air -->
+                    <path d="M 150 100 Q 160 95 170 100" stroke="#4a90e2" stroke-width="2" fill="none"/>
+                    <path d="M 150 140 Q 170 130 190 145" stroke="#4a90e2" stroke-width="2" fill="none"/>
+                    <path d="M 150 180 Q 180 160 200 190" stroke="#4a90e2" stroke-width="2" fill="none"/>
+                </svg>
+            </div>
+
+            <div class="student-info">
+                <p><strong>Nama</strong> : _________________________________</p>
+                <p><strong>Kelas</strong> : _________________________________</p>
+                <p><strong>Kelompok</strong> : _________________________________</p>
+                <p><strong>Hari/Tanggal</strong> : _________________________________</p>
+            </div>
+        </div>
+
+        <div class="cover-footer">
+            <p><strong>Disusun Oleh:</strong></p>
+            <p>Sela Auria Fau</p>
+            <p>NIM 4243122005</p>
+        </div>
+    </div>
+
+    <!-- HALAMAN PENDAHULUAN -->
+    <div class="page intro-page">
+        <div class="page-header">
+            <h1>PENDAHULUAN</h1>
+        </div>
+
+        <div class="page-content">
+            <!-- Tujuan Pembelajaran -->
+            <section class="section">
+                <h2 class="section-title">📚 Tujuan Pembelajaran</h2>
+                <div class="content-box">
+                    <ul>
+                        <li>Memahami konsep tekanan hidrostatis dalam fluida statis</li>
+                        <li>Menganalisis hubungan antara kedalaman dan tekanan hidrostatis</li>
+                        <li>Menerapkan rumus tekanan hidrostatis: <span class="formula">P = ρgh</span></li>
+                        <li>Memprediksi perilaku fluida berdasarkan perbedaan tekanan</li>
+                        <li>Merancang dan melaksanakan percobaan sederhana dengan aman</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Dasar Teori -->
+            <section class="section">
+                <h2 class="section-title">🔬 Dasar Teori Ringkas</h2>
+                <div class="content-box">
+                    <p><strong>Tekanan Hidrostatis</strong> adalah tekanan yang dihasilkan oleh gaya berat fluida (cairan) pada kedalaman tertentu. Tekanan ini bekerja ke segala arah dan besarnya bergantung pada kedalaman.</p>
+                    
+                    <p><strong>Rumus Tekanan Hidrostatis:</strong></p>
+                    <div class="formula-box">
+                        P = ρgh
+                    </div>
+                    
+                    <p><strong>Keterangan:</strong></p>
+                    <ul>
+                        <li>P = Tekanan Hidrostatis (Pa atau N/m²)</li>
+                        <li>ρ (rho) = Massa jenis fluida (kg/m³)</li>
+                        <li>g = Percepatan gravitasi (≈ 10 m/s²)</li>
+                        <li>h = Kedalaman dari permukaan fluida (m)</li>
+                    </ul>
+
+                    <p><strong>Sifat Tekanan Hidrostatis:</strong></p>
+                    <ul>
+                        <li>Bekerja ke segala arah (isotropis)</li>
+                        <li>Makin dalam, makin besar tekanannya</li>
+                        <li>Tidak bergantung pada bentuk wadah</li>
+                        <li>Bergantung pada jenis fluida dan kedalaman</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Alat dan Bahan -->
+            <section class="section">
+                <h2 class="section-title">🛠️ Alat dan Bahan</h2>
+                <div class="content-box">
+                    <table class="equipment-table">
+                        <tr>
+                            <th>No.</th>
+                            <th>Alat/Bahan</th>
+                            <th>Jumlah</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Botol bekas (plastik/kaca) transparan</td>
+                            <td>1 buah</td>
+                            <td>Tinggi minimal 20 cm</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Jarum suntik / paku kecil</td>
+                            <td>3-4 buah</td>
+                            <td>Untuk membuat lubang</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Selotip / isolasi</td>
+                            <td>1 gulung</td>
+                            <td>Untuk menutup lubang sementara</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Air bersih</td>
+                            <td>Secukupnya</td>
+                            <td>Bisa air keran</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Penggaris / meter</td>
+                            <td>1 buah</td>
+                            <td>Untuk mengukur kedalaman & jarak</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Bak / wadah penampung air</td>
+                            <td>1 buah</td>
+                            <td>Untuk menampung air yang keluar</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Kertas HVS / tissue</td>
+                            <td>Beberapa lembar</td>
+                            <td>Untuk menyerap air</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- HALAMAN KEGIATAN UTAMA -->
+    <div class="page activity-page">
+        <div class="page-header">
+            <h1>KEGIATAN UTAMA</h1>
+        </div>
+
+        <div class="page-content">
+            <!-- Orientasi Masalah -->
+            <section class="section">
+                <h2 class="section-title">❓ Pertanyaan Pemantik (Orientasi Masalah)</h2>
+                <div class="content-box highlight-box">
+                    <p><strong>Pernahkah Anda memperhatikan:</strong></p>
+                    <ul>
+                        <li>Mengapa saat mandi, air dari pipa yang lebih dalam mengalir lebih deras dibanding pipa yang lebih tinggi?</li>
+                        <li>Mengapa lubang di bagian bawah botol mengeluarkan air dengan jarak yang lebih jauh dibanding lubang di atas?</li>
+                        <li>Bagaimana hubungan antara kedalaman air dan kekuatan aliran air yang keluar?</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>Mari kita selidiki melalui percobaan berikut!</strong></p>
+                </div>
+            </section>
+
+            <!-- Langkah Kerja -->
+            <section class="section">
+                <h2 class="section-title">📋 Langkah-Langkah Kerja</h2>
+                <div class="content-box">
+                    <ol class="steps-list">
+                        <li>
+                            <strong>Persiapan Alat</strong>
+                            <ul>
+                                <li>Ambil botol bekas yang transparan (bersihkan terlebih dahulu)</li>
+                                <li>Siapkan paku/jarum untuk melubangi botol</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Membuat Lubang pada Botol</strong>
+                            <ul>
+                                <li>Tandai 3 titik pada botol: bagian atas (h = 5 cm), tengah (h = 10 cm), bawah (h = 15 cm) dari dasar botol</li>
+                                <li>Hati-hati membuat lubang menggunakan paku/jarum (keamanan kerja prioritas!)</li>
+                                <li>Tutup semua lubang dengan selotip agar air tidak keluar</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Isi Botol dengan Air</strong>
+                            <ul>
+                                <li>Tuangkan air bersih ke dalam botol hingga penuh (atau minimal setinggi 15 cm)</li>
+                                <li>Catat ketinggian air di botol</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Buka Lubang Secara Bertahap</strong>
+                            <ul>
+                                <li>Buka lubang paling bawah terlebih dahulu dan amati pancaran air</li>
+                                <li>Ukur jarak horizontal pancaran air (dari lubang hingga air jatuh ke wadah penampung)</li>
+                                <li>Catat hasil pengamatan pada tabel</li>
+                                <li>Tutup kembali dengan selotip</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Ulangi untuk Lubang Lainnya</strong>
+                            <ul>
+                                <li>Lakukan hal yang sama untuk lubang tengah dan lubang atas</li>
+                                <li>Catat semua hasil pada tabel pengamatan</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Analisis Awal</strong>
+                            <ul>
+                                <li>Amati perbandingan kecepatan air dan jarak pancaran dari ketiga lubang</li>
+                                <li>Identifikasi pola hubungan antara kedalaman dan jarak pancaran</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Tabel Hasil Pengamatan -->
+            <section class="section">
+                <h2 class="section-title">📊 Tabel Hasil Pengamatan</h2>
+                <div class="content-box">
+                    <table class="observation-table">
+                        <tr>
+                            <th>No.</th>
+                            <th>Posisi Lubang</th>
+                            <th>Kedalaman (h) dari Permukaan Air (cm)</th>
+                            <th>Deskripsi Aliran Air</th>
+                            <th>Jarak Pancaran Air (cm)</th>
+                            <th>Kecepatan Relatif*</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Atas</td>
+                            <td>_________</td>
+                            <td>_______________________</td>
+                            <td>_________</td>
+                            <td>☐ Lambat ☐ Sedang ☐ Cepat</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Tengah</td>
+                            <td>_________</td>
+                            <td>_______________________</td>
+                            <td>_________</td>
+                            <td>☐ Lambat ☐ Sedang ☐ Cepat</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Bawah</td>
+                            <td>_________</td>
+                            <td>_______________________</td>
+                            <td>_________</td>
+                            <td>☐ Lambat ☐ Sedang ☐ Cepat</td>
+                        </tr>
+                    </table>
+                    <p style="margin-top: 10px; font-size: 12px;"><em>*Kecepatan Relatif: Perkiraan berdasarkan pengamatan visual, bukan pengukuran kuantitatif</em></p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- HALAMAN ANALISIS & DISKUSI -->
+    <div class="page analysis-page">
+        <div class="page-header">
+            <h1>ANALISIS & DISKUSI</h1>
+        </div>
+
+        <div class="page-content">
+            <!-- Pertanyaan Analisis -->
+            <section class="section">
+                <h2 class="section-title">🤔 Pertanyaan Analisis</h2>
+                <div class="content-box">
+                    <div class="question">
+                        <h4>1. Perbandingan Jarak Pancaran</h4>
+                        <p>Bandingkan jarak pancaran air dari ketiga lubang. Lubang mana yang memiliki jarak pancaran terjauh? Mengapa demikian?</p>
+                        <div class="answer-space">
+                            <p><strong>Jawaban:</strong></p>
+                            <p style="height: 60px; border: 1px dashed #999; padding: 10px; background: #f9f9f9;"></p>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h4>2. Hubungan Kedalaman dan Tekanan</h4>
+                        <p>Berdasarkan hasil percobaan, bagaimana hubungan antara kedalaman lubang (h) dan tekanan hidrostatis yang dihasilkan?</p>
+                        <div class="answer-space">
+                            <p><strong>Jawaban:</strong></p>
+                            <p style="height: 60px; border: 1px dashed #999; padding: 10px; background: #f9f9f9;"></p>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h4>3. Penerapan Rumus P = ρgh</h4>
+                        <p>Jika ρ air = 1000 kg/m³ dan g = 10 m/s², hitung tekanan hidrostatis pada lubang bawah dengan kedalaman 15 cm! Sesuaikan dengan teori.</p>
+                        <div class="answer-space">
+                            <p><strong>Jawaban:</strong></p>
+                            <p style="height: 60px; border: 1px dashed #999; padding: 10px; background: #f9f9f9;"></p>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h4>4. Kecepatan Aliran Air</h4>
+                        <p>Mengapa kecepatan air yang keluar dari lubang bawah lebih tinggi? Jelaskan dari sudut pandang energi fluida.</p>
+                        <div class="answer-space">
+                            <p><strong>Jawaban:</strong></p>
+                            <p style="height: 60px; border: 1px dashed #999; padding: 10px; background: #f9f9f9;"></p>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h4>5. Variabel yang Mempengaruhi Tekanan</h4>
+                        <p>Sebutkan dan jelaskan 3 variabel utama yang mempengaruhi besarnya tekanan hidrostatis menurut rumus P = ρgh.</p>
+                        <div class="answer-space">
+                            <p><strong>Jawaban:</strong></p>
+                            <p style="height: 80px; border: 1px dashed #999; padding: 10px; background: #f9f9f9;"></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Diskusi -->
+            <section class="section">
+                <h2 class="section-title">💬 Diskusi Kelompok</h2>
+                <div class="content-box">
+                    <p><strong>Diskusikan bersama anggota kelompok:</strong></p>
+                    <ul>
+                        <li>Apakah hasil percobaan sesuai dengan teori yang telah dipelajari?</li>
+                        <li>Apa saja faktor yang dapat mempengaruhi akurasi percobaan ini?</li>
+                        <li>Bagaimana aplikasi tekanan hidrostatis dalam kehidupan sehari-hari?</li>
+                        <li>Dapatkah konsep ini diterapkan pada fluida lain selain air?</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>Catatan Diskusi:</strong></p>
+                    <div style="height: 100px; border: 1px dashed #999; padding: 10px; background: #f9f9f9;"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- HALAMAN PENUTUP -->
+    <div class="page conclusion-page">
+        <div class="page-header">
+            <h1>PENUTUP</h1>
+        </div>
+
+        <div class="page-content">
+            <!-- Kesimpulan -->
+            <section class="section">
+                <h2 class="section-title">✅ Kesimpulan</h2>
+                <div class="content-box">
+                    <p><strong>Berdasarkan hasil percobaan yang telah dilakukan, buatlah kesimpulan yang menjawab tujuan pembelajaran:</strong></p>
+                    <ol>
+                        <li>
+                            <p><strong>Konsep Tekanan Hidrostatis:</strong></p>
+                            <div style="height: 60px; border: 1px dashed #999; padding: 10px; background: #f9f9f9;"></div>
+                        </li>
+                        <li>
+                            <p><strong>Hubungan Kedalaman dan Tekanan:</strong></p>
+                            <div style="height: 60px; border: 1px dashed #999; padding: 10px; background: #f9f9f9;"></div>
+                        </li>
+                        <li>
+                            <p><strong>Penerapan Rumus P = ρgh:</strong></p>
+                            <div style="height: 60px; border: 1px dashed #999; padding: 10px; background: #f9f9f9;"></div>
+                        </li>
+                        <li>
+                            <p><strong>Aplikasi Dalam Kehidupan Nyata:</strong></p>
+                            <div style="height: 60px; border: 1px dashed #999; padding: 10px; background: #f9f9f9;"></div>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Refleksi / Evaluasi -->
+            <section class="section">
+                <h2 class="section-title">🔍 Refleksi & Evaluasi Diri</h2>
+                <div class="content-box">
+                    <p><strong>Jawablah pertanyaan berikut dengan jujur untuk mengevaluasi pemahaman Anda:</strong></p>
+                    
+                    <div class="reflection-item">
+                        <p><strong>1. Seberapa baik pemahaman Anda tentang tekanan hidrostatis?</strong></p>
+                        <div style="margin: 10px 0;">
+                            <label><input type="radio"> ☐ Sangat baik, saya memahami sepenuhnya</label><br>
+                            <label><input type="radio"> ☐ Baik, saya memahami sebagian besar</label><br>
+                            <label><input type="radio"> ☐ Cukup, saya memahami beberapa bagian</label><br>
+                            <label><input type="radio"> ☐ Kurang, saya masih banyak yang tidak mengerti</label>
+                        </div>
+                    </div>
+
+                    <div class="reflection-item">
+                        <p><strong>2. Bagian mana dari percobaan ini yang paling sulit?</strong></p>
+                        <div style="height: 40px; border: 1px dashed #999; padding: 10px; background: #f9f9f9;"></div>
+                    </div>
+
+                    <div class="reflection-item">
+                        <p><strong>3. Apa yang ingin Anda pelajari lebih lanjut tentang fluida statis?</strong></p>
+                        <div style="height: 40px; border: 1px dashed #999; padding: 10px; background: #f9f9f9;"></div>
+                    </div>
+
+                    <div class="reflection-item">
+                        <p><strong>4. Bagaimana kerjasama kelompok Anda selama kegiatan ini?</strong></p>
+                        <div style="margin: 10px 0;">
+                            <label><input type="radio"> ☐ Sangat baik</label><br>
+                            <label><input type="radio"> ☐ Baik</label><br>
+                            <label><input type="radio"> ☐ Cukup</label><br>
+                            <label><input type="radio"> ☐ Kurang</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Catatan Guru -->
+            <section class="section">
+                <h2 class="section-title">📝 Catatan Guru</h2>
+                <div class="content-box">
+                    <div style="height: 80px; border: 2px solid #4a90e2; padding: 15px; background: #f0f7ff;"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div style="text-align: center; padding: 20px; font-size: 12px; color: #666; margin-top: 40px; border-top: 1px solid #ddd;">
+        <p>LKPD Fluida Statis - Tekanan Hidrostatis | Kelas XI SMA</p>
+        <p>Dibuat oleh: Sela Auria Fau (NIM 4243122005)</p>
+        <p>Universitas Negeri Medan - Fakultas Matematika dan Ilmu Pengetahuan Alam</p>
+    </div>
+</body>
+</html>
